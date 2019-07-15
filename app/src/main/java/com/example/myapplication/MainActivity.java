@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -22,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
             rollButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     resultsTextView.setText("");
-                    int sliderValue = seekBar.getProgress();
-                    resultsTextView.append(Integer.toString((sliderValue*10 )) +"%");
+                    int sliderValue = new Random().nextInt(seekBar.getProgress());
+                    resultsTextView.append(Integer.toString(((sliderValue+1)*10 )) +"%");
 
                 }
                 });
